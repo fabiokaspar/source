@@ -18,12 +18,7 @@ var vertices = [
         vec4( 0.5,  0.5, -0.5, 1.0 ),
         vec4( 0.5, -0.5, -0.5, 1.0 )
     ]; 
-/*
-var vertices = [
-    vec4(0, -0.5, -0.5, 1),
-    vec4(0, 0, 0.5, 1),
-    vec4(0,0.5, -0.5,1)
-]; */
+
 
 var lightPosition = vec4( 10.0, 10.0, 10.0, 0.0 );
 var lightAmbient = vec4( 0.2, 0.2, 0.2, 1.0 );
@@ -222,6 +217,10 @@ function loadObject(data) {
 
     // TO DO: convert strings into array of vertex and normal vectors
     var result = loadObjFile(data);
+
+    for(var i = 0; i < result.length; i++) {
+        document.write(result[i] + '<br>');
+    } 
 
     // TO DO: apply transformation to the object so that he is centered at the origin
 
